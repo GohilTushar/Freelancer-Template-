@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Freelancer Template</title>
+</head>
+
+<body>
+  {{>navbar data=detail}}
+  {{>slider slideData=slide}}
+
+  <section class="banner1_section py-5 bg2">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Start Learning From Here</h1>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis quia consequatur quod dolor velit ullam
+          accusamus deserunt earum repellendus. Libero accusamus at quaerat nesciunt id officiis voluptates, ipsa
+          corporis doloremque.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sevice_section" class="py-3 bg3">
+    <div class="container">
+      <h3 class="text-center text-dark">Services That Are Provided</h3>
+      <div class="row mt-4">
+
+        {{#each services}}
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="container text-center py-3 text-secondary">
+                <i class="{{this.icon}} serviceIcon"></i>
+              </div>
+              <h5 class="card-title">{{this.title}}</h5>
+              <p>{{this.discription}}</p>
+              <a href="{{this.link}}">{{this.linktext}}</a>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section class="banner2_section bgFH">
+    <div class="container text-center">
+      <div class="row">
+        {{#each b2information}}
+        <div class="col-md-6 py-5">
+          <h4>Work For People</h4>
+          {{this.text}}
+        </div>
+        <div class="col-md-6 py-5">
+          <img src="{{this.imgUrl}}" style="height: 300px;">
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section class="banner3_section bgFH">
+    <div class="container text-center">
+      <div class="row">
+        {{#each b3information}}
+        <div class="col-md-6 py-5">
+          <img src="{{this.imgUrl}}" style="height: 300px;">
+        </div>
+        <div class="col-md-6 py-5">
+          <h4>{{this.mainT}}</h4>
+          {{this.text}}
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <section id="About_section" class="py-5 bgFH">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-12">
+          <br>
+          <h5>About This Webste</h5>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos aut maxime odit, temporibus id mollitia,
+          voluptatum officiis consequuntur consequatur, voluptatem error! Quas reprehenderit accusamus facere. Rerum
+          eveniet dignissimos soluta adipisci nisi id, odio cumque odit, quod, nesciunt ipsam dolorum magni ducimus.
+          Aspernatur libero, dolor ducimus hic autem deserunt illo repellendus.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contactUs" class="py-5 bg1">
+    <div class="container">
+      <h3 class="text-center text-dark">Contact Us</h3>
+      <div class="row">
+        <div class="col-md-12">
+
+          <form action="/processForm" method="post">
+
+            <div class="form-floating mb-3">
+              <input name="email" type="email" class="form-control" placeholder="Mail" id="floatingexampleInputEmail1"
+                aria-describedby="emailHelp">
+              <label for="floatingexampleInputEmail1">Email Address</label>
+              <div id="emailHelp" class="form-text text-info">We'll never share your email with anyone else.</div>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input name="call" type="Number" class="form-control" placeholder="Number"
+                id="floatingcontactNumberField">
+              <label for="floatingcontactNumberField">Contact Number</label>
+            </div>
+
+            <div class="form-floating my-2">
+              <textarea name="query" class="form-control" placeholder="Query" id="floatingTextarea2"
+                style="height: 100px"></textarea>
+              <label for="floatingTextarea2">Your Query</label>
+            </div>
+
+            <div class="box text-center">
+              <button type="submit" class="btn btn-dark">Submit</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer bgFH">
+
+    <div class="container text-center py-5">
+      <div class="row">
+        <div class="col-md-12 ">
+          &copy; <span>TusharGohil</span>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
